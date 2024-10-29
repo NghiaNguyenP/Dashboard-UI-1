@@ -9,40 +9,37 @@ import {
 const data = [
   {
     name: "Ref",
-    count: 40,
-    fill: "#FAE27C", // Light yellow
+    count: 20,
+    fill: "#FF6384",
   },
   {
     name: "Lighting",
-    count: 20,
-    fill: "#C3EBFA", // Light blue
+    count: 25,
+    fill: "#36A2EB",
   },
   {
     name: "PV System",
     count: 15,
-    fill: "#A4DEFF", // Medium blue
+    fill: "#FFCE56",
   },
   {
     name: "FAUs",
     count: 10,
-    fill: "#FFD700", // Gold
+    fill: "#4BC0C0",
   },
   {
     name: "Cooling",
-    count: 8,
-    fill: "#FFA07A", // Salmon
+    count: 20,
+    fill: "#9966FF",
   },
   {
     name: "PV System - General",
-    count: 7,
-    fill: "#FF4500", // Orange red
+    count: 10,
+    fill: "#FF9F40",
   },
 ];
 
 const CountChart = () => {
-  // Generate a random number for kWh
-  const randomKWh = Math.floor(1000 + Math.random() * 9000); // e.g., 1000–9999 kWh
-
   return (
     <div className="bg-white rounded-xl w-full h-full p-4">
       {/* TITLE */}
@@ -55,36 +52,19 @@ const CountChart = () => {
           <RadialBarChart
             cx="50%"
             cy="50%"
-            innerRadius="40%"
+            innerRadius="70%"
             outerRadius="100%"
             barSize={32}
             data={data}
           >
-            <RadialBar background dataKey="count" />
-            <Legend
-              iconSize={10}
-              width={120}
-              height={140}
-              layout="vertical"
-              verticalAlign="middle"
-              wrapperStyle={{ top: 0, right: 0, lineHeight: "24px" }}
-            />
+            <RadialBar dataKey="count" cornerRadius={10} />
+            <Legend verticalAlign="bottom" height={36} iconType="circle" />
           </RadialBarChart>
         </ResponsiveContainer>
-        {/* Display kWh number in center */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-lg font-semibold">
-          {randomKWh} kWh
+        {/* Display Total Consumption in Center */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+          <h2 className="text-lg font-semibold">1,234 KWh</h2>
         </div>
-      </div>
-      {/* BOTTOM LEGEND */}
-      <div className="flex justify-around mt-4">
-        {data.map((item) => (
-          <div key={item.name} className="flex flex-col items-center">
-            <div className="w-5 h-5 rounded-full" style={{ backgroundColor: item.fill }} />
-            <h2 className="text-xs text-gray-600 mt-1">{item.name}</h2>
-            <h3 className="text-xs font-semibold text-gray-500">{item.count}%</h3>
-          </div>
-        ))}
       </div>
     </div>
   );

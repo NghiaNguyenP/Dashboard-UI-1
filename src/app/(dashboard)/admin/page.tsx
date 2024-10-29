@@ -1,9 +1,8 @@
 import Announcements from "@/components/Announcements";
-import AttendanceChart from "@/components/AttendanceChart";
 import CountChart from "@/components/CountChart";
 import EventCalendar from "@/components/EventCalendar";
-import FinanceChart from "@/components/FinanceChart";
 import UserCard from "@/components/UserCard";
+import Chart2 from "@/components/Chart2"; // Make sure to import Chart2
 
 const AdminPage = () => {
   return (
@@ -23,14 +22,16 @@ const AdminPage = () => {
           <div className="w-full lg:w-1/3 h-[450px]">
             <CountChart />
           </div>
-          {/* ATTENDANCE CHART */}
+          {/* CHART 2 */}
           <div className="w-full lg:w-2/3 h-[450px]">
-            <AttendanceChart />
+            <Chart2 />
           </div>
         </div>
-        {/* BOTTOM CHART */}
-        <div className="w-full h-[500px]">
-          <FinanceChart />
+        {/* USER CARDS REPLACEMENT */}
+        <div className="flex gap-4 justify-between flex-wrap mt-8">
+          <UserCard type="Electric Consumption" data_number={1234} changes={5} />
+          <UserCard type="Electric Use Intensity" data_number={987} changes={-3} />
+          <UserCard type="Water Use Intensity" data_number={789} changes={-2} />
         </div>
       </div>
       {/* RIGHT */}
@@ -43,4 +44,3 @@ const AdminPage = () => {
 };
 
 export default AdminPage;
-//changes?
