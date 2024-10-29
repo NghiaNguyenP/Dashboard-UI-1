@@ -14,13 +14,13 @@ const menuItems = [
       },
       {
         icon: "/teacher.png",
-        label: "Teachers",
+        label: "3d Model",
         href: "/list/teachers",
         visible: ["admin", "teacher"],
       },
       {
         icon: "/student.png",
-        label: "Students",
+        label: "Data analysis",
         href: "/list/students",
         visible: ["admin", "teacher"],
       },
