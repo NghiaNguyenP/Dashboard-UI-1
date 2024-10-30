@@ -2,7 +2,7 @@ import Announcements from "@/components/Announcements";
 import CountChart from "@/components/CountChart";
 import EventCalendar from "@/components/EventCalendar";
 import UserCard from "@/components/UserCard";
-import Chart2 from "@/components/Chart2"; // Make sure to import Chart2
+import ECbLChart from "@/components/Energy_consumption_chart_2"; // Make sure to import Chart2
 
 const AdminPage = () => {
   return (
@@ -24,7 +24,7 @@ const AdminPage = () => {
           </div>
           {/* CHART 2 */}
           <div className="w-full lg:w-2/3 h-[450px]">
-            <Chart2 />
+            <ECbLChart />
           </div>
         </div>
         {/* USER CARDS REPLACEMENT */}
