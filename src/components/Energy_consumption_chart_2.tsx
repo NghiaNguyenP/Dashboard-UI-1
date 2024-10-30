@@ -10,7 +10,7 @@ const locationData = [
   { name: "B1", count: 10, fill: "#FF9F40" },
 ];
 
-const ECbLChart = () => {
+const ECbLChart2 = () => {
   return (
     <div className="bg-white rounded-xl w-full h-full p-4">
       {/* TITLE */}
@@ -53,4 +53,4 @@ const ECbLChart = () => {
   );
 };
 
-export default ECbLChart;
+export default ECbLChart2;

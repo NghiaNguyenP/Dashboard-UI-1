@@ -4,10 +4,12 @@ const UserCard = ({
   type,
   data_number,
   changes,
+  unit = "kWh", // Default unit
 }: {
   type: string;
   data_number: number;
   changes: number;
+  unit?: string;
 }) => {
   return (
     <div className="rounded-2xl odd:bg-lamaPurple even:bg-lamaYellow p-4 flex-1 min-w-[130px]">
@@ -18,8 +20,10 @@ const UserCard = ({
         <Image src="/more.png" alt="" width={20} height={20} />
       </div>
       
-      {/* Display data_number */}
-      <h1 className="text-2xl font-semibold my-4">{data_number.toLocaleString()}</h1>
+      {/* Display data_number with unit */}
+      <h1 className="text-2xl font-semibold my-4">
+        {data_number.toLocaleString()} <span className="text-lg text-gray-500">{unit}</span>
+      </h1>
       
       {/* Display changes with color based on positive or negative */}
       <h3
