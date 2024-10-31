@@ -25,7 +25,7 @@ const menuItems = [
         visible: ["admin", "teacher"],
       },
       {
-        icon: "/parent.png",
+        icon: "/3d-model.png",
         label: "Simulation",
         href: "/list/parents",
         visible: ["admin", "teacher"],
